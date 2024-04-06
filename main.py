@@ -5,7 +5,24 @@ file_path = '/index.html'
 response = requests.get('file://' + file_path)
 html_content = response.text
 
+#Create a Beautiful Soup object
 soup = BeautifulSoup(html_content, 'html.parser')
 
-def test():
-    doll = 1 + 1
+def caesar(message, key, type):
+    message = soup.select('#value').upper()
+    key = soup.select('#key')
+    type = soup.find_all('button')
+    translated = ''
+    letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    for i in message:
+        templetter = letters.find(i)
+        if type == soup.select('#encrypt'):
+            templetter += key
+            print('encrypt')
+        elif type == soup.select('#decrypt'):
+            templetter -= key
+            print('decrypt')
+        translated += letters[templetter]
+    return translated
+
