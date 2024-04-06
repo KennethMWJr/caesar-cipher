@@ -25,4 +25,6 @@ def caesar(message, key, type):
             print('decrypt')
         translated += letters[templetter]
     return translated
+caesar()
 
+print('test')
