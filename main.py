@@ -4,6 +4,8 @@ import requests
 file_path = '/index.html'
 response = requests.get('file://' + file_path)
 html_content = response.text
+with open(file_path, 'r') as file:
+    html_content = file.read()
 
 #Create a Beautiful Soup object
 soup = BeautifulSoup(html_content, 'html.parser')
