@@ -13,7 +13,7 @@ soup = BeautifulSoup(html_content, 'html.parser')
 def caesar(message, key, type):
     message = soup.select('#value').upper()
     key = soup.select('#key')
-    type = soup.find_all('button')
+    type = soup.find('button')
     translated = ''
     letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
